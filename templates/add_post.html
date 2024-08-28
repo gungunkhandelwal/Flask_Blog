@@ -1,0 +1,55 @@
+{% extends 'main.html'%}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/contact-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Add Post</h1>
+                            <span class="subheading">You can add a post.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h2>Add Post</h2>
+                        <div class="my-5">
+                            <form id="contactForm" action="/add_post" method="post">
+                                <div class="form-floating">
+                                    <input class="form-control" id="title" type="text" placeholder="Enter your title..." name="title" data-sb-validations="required" />
+                                    <label for="title">Title</label>
+                                </div>
+   
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="description" type="text" style="height: 12rem" placeholder="Enter your description..."  name="description" data-sb-validations="required" ></textarea>
+                                    <label for="description">Description</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="slug" placeholder="Enter your slug..." name="slug" data-sb-validations="required"></input>
+                                    <label for="slug">Slug</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="img_file" placeholder="Enter your image..." name="img_file" data-sb-validations="required"></input>
+                                    <label for="img_file">Img_File</label>
+                                </div>
+                                <br />
+                                <!-- Submit success message-->
+                                <!---->
+
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Add</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock %}
